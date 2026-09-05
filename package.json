@@ -1,0 +1,20 @@
+{
+  "name": "toll-map-legal",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static legal pages for the TOLL_MAP mobile application.",
+  "type": "module",
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "node scripts/build.mjs",
+    "lint": "node scripts/validate-site.mjs source",
+    "typecheck": "node --check scripts/build.mjs && node --check scripts/clean.mjs && node --check scripts/validate-site.mjs",
+    "test": "node --test tests/site.test.mjs",
+    "check:links": "node scripts/validate-site.mjs _site",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build && npm run check:links",
+    "serve": "python3 -m http.server 4173 --directory _site"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
